@@ -3,7 +3,7 @@ title       : Temp Converter
 subtitle    : Temperature Conversion
 author      : Huihui Duan
 job         : 
-framework   : html5slides        # {io2012, html5slides, shower, dzslides, ...}
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
@@ -11,24 +11,58 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Read-And-Delete
+## Convert Fahrenheit & Celsius
 
-1. Edit YAML front matter
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+Input 1: Degree Quantity
+```{r, echo = TRUE}
+(dq = 0)
+```
+Input 2: From Fahrenheit or Celsius
+```{r, echo = TRUE}
+(cf = "Celsius")
+```
 
 --- .class #id 
 
-## Slide 2
+## Copied
+
+Copied from the input: 
+
+Result: 
+
+You entered: 
+```{r, echo = TRUE}
+paste(dq, cf)
+```
 
 ---
-## 3
+## Temp Converter to Fahrenheit
+
+was converted to:
+```{r, echo = TRUE}
+paste(format(round(dq * 9 / 5 + 32, 2), nsmall = 2), "Fahrenheit")
+```
 
 ---
-## 4
+## From Fahrenheit to Celsius
+Input 1: Degree Quantity
+```{r, echo = FALSE}
+(dq = 0)
+```
+Input 2: From Fahrenheit or Celsius
+```{r, echo = FALSE}
+(cf = "Fahrenheit")
+```
 
----
-## 5
+You entered: 
+```{r, echo = FALSE}
+paste(dq, cf)
+```
 
+was converted to:
+```{r, echo = FALSE}
+paste(format(round((dq - 32) * 5 / 9, 2), nsmall = 2), "Celsius")
+
+```
 
 
